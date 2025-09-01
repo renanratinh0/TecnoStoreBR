@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras - TecnoShop</title>
+    <link rel="icon" type="image/svg+xml" href="imgs/logo.svg">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- ✅ CSS EXTERNO -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="antialiased">
+
+<!-- ===== Header / Navbar ===== -->
+<header class="bg-gray-800/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-700">
+    <nav class="container mx-auto px-4 lg:px-6 py-3">
+        <div class="flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold tracking-tighter">
+                Tecno<span class="highlight-accent-text">Shop</span>
+            </a>
+
+            <div class="hidden lg:flex items-center space-x-6 text-sm font-semibold text-gray-300">
+                <a href="index.html" class="hover:text-lime-400 transition-colors">Início</a>
+                <a href="produtos.html" class="hover:text-lime-400 transition-colors">Produtos</a>
+                <a href="sobre.html" class="hover:text-lime-400 transition-colors">Sobre</a>
+                <a href="contato.html" class="hover:text-lime-400 transition-colors">Contato</a>
+            </div>
+            <div class="hidden lg:flex flex-1 max-w-lg">
+                <div class="relative w-full">
+                    <input type="search" id="index-search-input" placeholder="Pesquise seu produto..."
+                           class="w-full bg-gray-700 border-gray-600 rounded-lg py-2.5 px-4 text-gray-200 focus:ring-2 focus:ring-lime-400 focus:outline-none">
+                    <button id="index-search-button" class="absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-md hover:bg-gray-600">
+                        <i class="fa fa-search text-gray-400"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="flex items-center space-x-4">
+                <a href="carrinho.html" class="group p-2 rounded-lg hover:bg-gray-700 relative">
+                    <i class="fa fa-shopping-cart text-xl text-lime-400"></i>
+                    <span id="cart-badge"
+                          class="absolute -top-1 -right-1 bg-lime-500 text-gray-900 text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full"
+                          style="display: none;">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- ===== Conteúdo Principal da Página "Carrinho" ===== -->
+<main class="container mx-auto px-4 lg:px-6 py-8 md:py-16">
+
+    <section class="text-center fade-in mb-12 md:mb-16">
+        <h1 class="text-4xl md:text-6xl font-black tracking-tight">
+            Meu <span class="highlight-accent-text">Carrinho</span>
+        </h1>
+        <p class="mt-4 text-lg max-w-3xl mx-auto text-gray-300">
+            Confira os itens, altere as quantidades e finalize o seu pedido.
+        </p>
+    </section>
+
+    <section class="fade-in" style="animation-delay: 0.2s;">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+
+            <!-- Coluna da Lista de Produtos -->
+            <div id="cart-items-container" class="lg:col-span-2 bg-gray-800/50 p-6 rounded-2xl border border-gray-700 space-y-4">
+                <!-- Os itens do carrinho serão inseridos aqui pelo JavaScript -->
+            </div>
+
+            <!-- Coluna do Resumo do Pedido -->
+            <div id="summary-box" class="lg-col-span-1 bg-gray-800/50 p-8 rounded-2xl border border-gray-700 sticky top-28">
+                <h2 class="text-2xl font-bold text-white mb-6 border-b border-gray-700 pb-4">Resumo do Pedido</h2>
+                <div class="space-y-4 text-lg">
+                    <div class="flex justify-between text-gray-300">
+                        <span>Subtotal</span>
+                        <span id="summary-subtotal">R$ 0,00</span>
+                    </div>
+                    <div class="flex justify-between text-gray-300">
+                        <span>Frete</span>
+                        <span id="summary-shipping">A calcular</span>
+                    </div>
+                    <div class="flex justify-between font-bold text-white text-xl pt-4 border-t border-gray-600">
+                        <span>Total</span>
+                        <span id="summary-total" class="highlight-accent-text">R$ 0,00</span>
+                    </div>
+                </div>
+
+                <div class="mt-8">
+                    <!-- ✅ O ONCLICK AGORA CHAMA A FUNÇÃO GLOBAL -->
+                    <button id="whatsapp-checkout-button" onclick="solicitarOrcamentoWhatsApp()" class="highlight-accent font-bold py-4 px-8 rounded-lg w-full text-lg">
+                        <i class="fab fa-whatsapp fa-lg mr-2"></i>
+                        Solicitar Orçamento
+                    </button>
+                    <a href="produtos.html" class="block text-center mt-4 text-gray-400 hover:text-lime-400 transition-colors">
+                        Continuar comprando
+                    </a>
+                </div>
+
+                <div class="mt-8 pt-6 border-t border-gray-700">
+                    <label for="payment-method-select" class="text-base font-semibold text-gray-300 mb-3 block">Forma de Pagamento Preferida:</label>
+                    <div class="relative">
+                        <select id="payment-method-select" class="w-full bg-gray-700 border border-gray-600 rounded-lg py-3 px-4 text-gray-200 focus:ring-2 focus:ring-lime-400 focus:outline-none appearance-none transition-all">
+                            <option value="" disabled selected>Selecione uma opção...</option>
+                            <option value="Dinheiro">Dinheiro</option>
+                            <option value="Pix">Pix</option>
+                            <option value="Cartão de Crédito (1x)">Cartão de Crédito (1x)</option>
+                            <option value="Cartão de Crédito (3x)">Cartão de Crédito (3x)</option>
+                            <option value="Cartão de Crédito (6x)">Cartão de Crédito (6x)</option>
+                            <option value="Cartão de Crédito (10x)">Cartão de Crédito (10x)</option>
+                            <option value="Cartão de Crédito (12x)">Cartão de Crédito (12x)</option>
+                        </select>
+                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-400">
+                            <i class="fas fa-chevron-down text-sm"></i>
+                        </div>
+                    </div>
+                    <div class="flex justify-center items-center space-x-5 text-2xl text-gray-500 mt-5">
+                        <i class="fa-solid fa-money-bill-wave" title="Dinheiro"></i>
+                        <i class="fa-solid fa-qrcode" title="Pix"></i>
+                        <i class="far fa-credit-card" title="Cartão de Crédito"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+
+<footer class="bg-gray-950 border-t border-gray-800">
+    <div class="container px-6 py-12 mx-auto">
+        <div class="flex flex-col items-center text-center">
+            <a href="#" class="text-3xl font-black tracking-tighter">
+                Tecno<span class="highlight-accent-text">Shop</span>
+            </a>
+
+            <div class="flex flex-wrap justify-center mt-6 -mx-4">
+                <a href="index.html" class="mx-4 text-sm text-gray-400 hover:text-lime-400 transition-colors">Início</a>
+                <a href="produtos.html" class="mx-4 text-sm text-gray-400 hover:text-lime-400 transition-colors">Produtos</a>
+                <a href="sobre.html" class="mx-4 text-sm text-gray-400 hover:text-lime-400 transition-colors">Sobre</a>
+                <a href="contato.html" class="mx-4 text-sm text-gray-400 hover:text-lime-400 transition-colors">Contato</a>
+                <a href="carrinho.html" class="mx-4 text-sm text-gray-400 hover:text-lime-400 transition-colors">Carrinho</a>
+
+            </div>
+        </div>
+
+        <hr class="my-8 border-gray-700">
+
+        <div class="flex flex-col items-center sm:flex-row sm:justify-between">
+            <div class="text-center sm:text-left">
+                <p class="text-sm text-gray-500">
+                    © <span id="current-year">2025</span> Todos os direitos reservados.
+                </p>
+                <p class="text-sm text-gray-400 mt-2 sm:mt-1">
+                    Desenvolvido por <a href="https://renanratinh0.github.io/renanratinh0/" class="text-lime-400 hover:underline">Renan Carvalho Cavalcante</a>.
+                </p>
+            </div>
+
+            <div class="flex items-center space-x-4 mt-4 sm:mt-0">
+                <a href="https://github.com/renanratinh0" target="_blank" class="text-gray-400 hover:text-white transition-colors text-2xl" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.instagram.com/renan.carvalho.c/" target="_blank" class="text-gray-400 hover:text-pink-500 transition-colors text-2xl" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:renanratinho00@gmail.com" class="text-gray-400 hover:text-lime-400 transition-colors text-2xl" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+<script src="js/config.js"></script> <script src="js/ui.js"></script> <script src="js/search.js"></script> <script src="js/carrinho.js"></script> ```
+
+</body>
+</html>

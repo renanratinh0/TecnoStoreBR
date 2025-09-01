@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - TecnoShop</title>
+    <link rel="icon" type="image/svg+xml" href="imgs/logo.svg">
+
+    <!-- Tailwind css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="antialiased">
+
+<!-- ===== Header / Navbar (IDÊNTICO ÀS OUTRAS PÁGINAS) ===== -->
+<header class="bg-gray-800/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-700">
+    <nav class="container mx-auto px-4 lg:px-6 py-3">
+        <div class="flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold tracking-tighter">
+                Tecno<span class="highlight-accent-text">Shop</span>
+            </a>
+
+            <div class="hidden lg:flex items-center space-x-6 text-sm font-semibold text-gray-300">
+                <a href="index.html" class="hover:text-lime-400 transition-colors">Início</a>
+                <a href="produtos.html" class="hover:text-lime-400 transition-colors">Produtos</a>
+                <a href="sobre.html" class="thover:text-lime-400 transition-colors">Sobre</a>
+                <a href="contato.html" class="text-lime-400">Contato</a>
+            </div>
+            <div class="hidden lg:flex flex-1 max-w-lg">
+                <div class="relative w-full">
+                    <input type="search" id="index-search-input" placeholder="Pesquise seu produto..."
+                           class="w-full bg-gray-700 border-gray-600 rounded-lg py-2.5 px-4 text-gray-200 focus:ring-2 focus:ring-lime-400 focus:outline-none">
+                    <button id="index-search-button" class="absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-md hover:bg-gray-600">
+                        <i class="fa fa-search text-gray-400"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="carrinho.html" class="group p-2 rounded-lg hover:bg-gray-700 relative">
+                    <i class="fa fa-shopping-cart text-xl text-gray-300 group-hover:text-lime-400 transition-colors duration-200"></i>
+                    <span id="cart-badge"
+                          class="absolute -top-1 -right-1 bg-lime-500 text-gray-900 text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full"
+                          style="display: none;">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- ===== Conteúdo Principal da Página "Contato" ===== -->
+<main class="container mx-auto px-4 lg:px-6 py-8 md:py-16">
+
+    <!-- Seção de Título -->
+    <section class="text-center fade-in mb-12 md:mb-16">
+        <h1 class="text-4xl md:text-6xl font-black tracking-tight">
+            Fale <span class="highlight-accent-text">Conosco</span>
+        </h1>
+        <p class="mt-4 text-lg max-w-3xl mx-auto text-gray-300">
+            Tem alguma dúvida, sugestão ou precisa de suporte? Nossa equipe está pronta para te ajudar. Preencha o formulário ou utilize um de nossos canais de atendimento.
+        </p>
+    </section>
+
+    <!-- Seção Principal: Informações e Formulário -->
+    <section class="fade-in grid grid-cols-1 lg:grid-cols-2 gap-12 items-start" style="animation-delay: 0.2s;">
+
+        <!-- Coluna de Informações de Contato -->
+        <div class="space-y-8 bg-gray-800/50 p-8 rounded-2xl border border-gray-700">
+            <h2 class="text-3xl font-bold text-white mb-6">Nossos Canais</h2>
+
+            <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0">
+                    <i class="fas fa-map-marker-alt text-2xl highlight-accent-text mt-1"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-xl text-white">Nosso "Escritório"</h3>
+                    <p class="text-gray-400">Avenida dos Algoritmos, 101 - Torre Tech</p>
+                    <p class="text-gray-400">Vale do Silício, São Paulo - SP, 0404-404</p>
+                </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0">
+                    <i class="fab fa-whatsapp text-2xl highlight-accent-text mt-1"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-xl text-white">WhatsApp</h3>
+                    <p class="text-gray-400">Entre em contato para vendas e suporte rápido.</p>
+                    <a href="#" class="text-lime-400 hover:text-lime-300 transition-colors">(11) 99999-8888</a>
+                </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0">
+                    <i class="fas fa-envelope text-2xl highlight-accent-text mt-1"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-xl text-white">E-mail</h3>
+                    <p class="text-gray-400">Para questões gerais e parcerias.</p>
+                    <a href="mailto:renanratinho00@gmail.com
+" class="text-lime-400 hover:text-lime-300 transition-colors">renanratinho00@gmail.com</a>
+                </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0">
+                    <i class="fas fa-clock text-2xl highlight-accent-text mt-1"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-xl text-white">Horário de Atendimento</h3>
+                    <p class="text-gray-400">Segunda a Sexta: 9:00 às 18:00</p>
+                    <p class="text-gray-400">Sábado: 9:00 às 13:00</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coluna do Formulário -->
+        <div class="bg-gray-800/50 p-8 rounded-2xl border border-gray-700">
+            <h2 class="text-3xl font-bold text-white mb-6">Envie uma Mensagem</h2>
+            <form action="#" method="POST" class="space-y-6">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Seu nome</label>
+                    <input type="text" name="name" id="name" required class="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-gray-200 placeholder-gray-500 focus:ring-2 focus:ring-lime-400 focus:border-lime-400 focus:outline-none transition">
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Seu e-mail</label>
+                    <input type="email" name="email" id="email" required class="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-gray-200 placeholder-gray-500 focus:ring-2 focus:ring-lime-400 focus:border-lime-400 focus:outline-none transition">
+                </div>
+                <div>
+                    <label for="subject" class="block text-sm font-medium text-gray-300 mb-2">Assunto</label>
+                    <input type="text" name="subject" id="subject" required class="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-gray-200 placeholder-gray-500 focus:ring-2 focus:ring-lime-400 focus:border-lime-400 focus:outline-none transition">
+                </div>
+                <div>
+                    <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Sua mensagem</label>
+                    <textarea name="message" id="message" rows="5" required class="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-gray-200 placeholder-gray-500 focus:ring-2 focus:ring-lime-400 focus:border-lime-400 focus:outline-none transition"></textarea>
+                </div>
+                <div>
+                    <button type="submit" class="highlight-accent font-bold py-3 px-6 rounded-lg w-full text-lg transition transform hover:scale-105">
+                        Enviar Mensagem <i class="fas fa-paper-plane ml-2"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- ===== NOVA SEÇÃO DE REDES SOCIAIS ===== -->
+    <section class="fade-in mt-16 md:mt-24 text-center" style="animation-delay: 0.4s;">
+        <h2 class="text-3xl md:text-4xl font-black tracking-tight mb-4">
+            Conecte-se Conosco nas <span class="highlight-accent-text">Redes</span>
+        </h2>
+        <p class="mt-2 mb-12 text-lg max-w-2xl mx-auto text-gray-400">
+            Acompanhe nossas novidades, promoções e bastidores. Faça parte da nossa comunidade!
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+            <!-- Card GitHub -->
+            <a href="https://github.com/renanratinh0" class="group block bg-gray-800/50 p-8 rounded-2xl transition-all duration-300 hover:bg-gray-800 hover:-translate-y-2 border border-transparent hover:border-gray-400">
+                <i class="fab fa-github fa-4x text-gray-400 transition-colors group-hover:text-white"></i>
+                <h3 class="font-bold text-xl mt-4 text-white">GitHub</h3>
+                <p class="text-sm text-gray-500">/renanratinh0</p>
+            </a>
+            <!-- Card Facebook -->
+            <a href="#" class="group block bg-gray-800/50 p-8 rounded-2xl transition-all duration-300 hover:bg-gray-800 hover:-translate-y-2 border border-transparent hover:border-blue-500">
+                <i class="fab fa-facebook-f fa-4x text-gray-400 transition-colors group-hover:text-blue-500"></i>
+                <h3 class="font-bold text-xl mt-4 text-white">Facebook</h3>
+                <p class="text-sm text-gray-500">/renan.carvalho.c</p>
+            </a>
+            <!-- Card email -->
+            <a href="mailto:renanratinho00@gmail.com" class="group block bg-gray-800/50 p-8 rounded-2xl transition-all duration-300 hover:bg-gray-800 hover:-translate-y-2 border border-transparent hover:border-lime-400">
+                <i class="fas fa-envelope fa-4x text-gray-400 transition-colors group-hover:text-lime-400"></i>
+                <h3 class="font-bold text-xl mt-4 text-white">Email</h3>
+                <p class="text-sm text-gray-500">Envie uma mensagem</p>
+            </a>
+            <!-- Card X/Twitter -->
+            <a href="#" class="group block bg-gray-800/50 p-8 rounded-2xl transition-all duration-300 hover:bg-gray-800 hover:-translate-y-2 border border-transparent hover:border-gray-400">
+                <i class="fab fa-x-twitter fa-4x text-gray-400 transition-colors group-hover:text-white"></i>
+                <h3 class="font-bold text-xl mt-4 text-white">X (Twitter)</h3>
+                <p class="text-sm text-gray-500">@renan.carvalho.c</p>
+            </a>
+            <!-- Card Instagram -->
+            <a href="]https://www.instagram.com/renan.carvalho.c/" class="group block bg-gray-800/50 p-8 rounded-2xl transition-all duration-300 hover:bg-gray-800 hover:-translate-y-2 border border-transparent hover:border-pink-500">
+                <i class="fab fa-instagram fa-4x text-gray-400 transition-colors group-hover:text-pink-500"></i>
+                <h3 class="font-bold text-xl mt-4 text-white">Instagram</h3>
+                <p class="text-sm text-gray-500">@renan.carvalho.c</p>
+            </a>
+        </div>
+    </section>
+</main>
+
+<footer class="bg-gray-950 border-t border-gray-800">
+    <div class="container px-6 py-12 mx-auto">
+        <div class="flex flex-col items-center text-center">
+            <a href="index.html " class="text-3xl font-black tracking-tighter">
+                Tecno<span class="highlight-accent-text">Shop</span>
+            </a>
+
+            <div class="flex flex-wrap justify-center mt-6 -mx-4">
+                <a href="index.html" class="mx-4 text-sm text-gray-400 hover:text-lime-400 transition-colors">Início</a>
+                <a href="produtos.html" class="mx-4 text-sm text-gray-400 hover:text-lime-400 transition-colors">Produtos</a>
+                <a href="sobre.html" class="mx-4 text-sm text-gray-400 hover:text-lime-400 transition-colors">Sobre</a>
+                <a href="contato.html" class="mx-4 text-sm text-gray-400 hover:text-lime-400 transition-colors">Contato</a>
+                <a href="carrinho.html" class="mx-4 text-sm text-gray-400 hover:text-lime-400 transition-colors">Carrinho</a>
+
+            </div>
+        </div>
+
+        <hr class="my-8 border-gray-700">
+
+        <div class="flex flex-col items-center sm:flex-row sm:justify-between">
+            <div class="text-center sm:text-left">
+                <p class="text-sm text-gray-500">
+                    © <span id="current-year">2025</span> Todos os direitos reservados.
+                </p>
+                <p class="text-sm text-gray-400 mt-2 sm:mt-1">
+                    Desenvolvido por <a href="https://renanratinh0.github.io/renanratinh0/" class="text-lime-400 hover:underline">Renan Carvalho Cavalcante</a>.
+                </p>
+            </div>
+
+            <div class="flex items-center space-x-4 mt-4 sm:mt-0">
+                <a href="https://github.com/renanratinh0" target="_blank" class="text-gray-400 hover:text-white transition-colors text-2xl" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.instagram.com/renan.carvalho.c/" target="_blank" class="text-gray-400 hover:text-pink-500 transition-colors text-2xl" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:renanratinho00@gmail.com" class="text-gray-400 hover:text-lime-400 transition-colors text-2xl" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+
+
+    </div>
+    </div>
+</footer>
+<script src="js/config.js"></script>
+
+<script src="js/ui.js"></script>
+<script src="js/main.js"></script>
+<script src="js/search.js"></script>
+
+</body>
+</html>

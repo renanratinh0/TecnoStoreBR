@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carregando Produto... - TecnoStoreBR</title>
+    <link rel="icon" type="image/svg+xml" href="imgs/logo.svg">
+    <meta name="description" content="Detalhes do produto, preços e especificações na TecnoStoreBR.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="antialiased">
+
+<header class="bg-gray-800/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-700">
+    <nav class="container mx-auto px-4 lg:px-6 py-3">
+        <div class="flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold tracking-tighter">
+                Tecno<span class="highlight-accent-text">Shop</span>
+            </a>
+
+            <div class="hidden lg:flex items-center space-x-6 text-sm font-semibold text-gray-300">
+                <a href="index.html" class="hover:text-lime-400 transition-colors">Início</a>
+                <a href="produtos.html" class="text-lime-400">Produtos</a>
+                <a href="sobre.html" class="hover:text-lime-400 transition-colors">Sobre</a>
+                <a href="contato.html" class="hover:text-lime-400 transition-colors">Contato</a>
+            </div>
+            <div class="hidden lg:flex flex-1 max-w-lg">
+                <div class="relative w-full">
+                    <input type="search" id="index-search-input" placeholder="Pesquise seu produto..."
+                           class="w-full bg-gray-700 border-gray-600 rounded-lg py-2.5 px-4 text-gray-200 focus:ring-2 focus:ring-lime-400 focus:outline-none">
+                    <button id="index-search-button" class="absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-md hover:bg-gray-600">
+                        <i class="fa fa-search text-gray-400"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="flex items-center space-x-4">
+                <a href="carrinho.html" class="group p-2 rounded-lg hover:bg-gray-700 relative">
+                    <i class="fa fa-shopping-cart text-xl text-gray-300 group-hover:text-lime-400 transition-colors duration-200"></i>
+                    <span id="cart-badge"
+                          class="absolute -top-1 -right-1 bg-lime-500 text-gray-900 text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full"
+                          style="display: none;">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+</header>
+<main class="container mx-auto px-4 lg:px-6 py-8 md:py-12">
+    <nav class="text-sm text-gray-400 mb-6 fade-in" aria-label="Breadcrumb">
+        <ol class="list-none p-0 inline-flex space-x-2">
+            <li class="flex items-center"><a href="index.html" class="hover:text-lime-400">Início</a></li>
+            <li class="flex items-center"><i class="fas fa-chevron-right mx-2"></i><a href="#"
+                                                                                      id="breadcrumb-category"
+                                                                                      class="hover:text-lime-400">...</a>
+            </li>
+            <li class="flex items-center"><i class="fas fa-chevron-right mx-2"></i><span
+                    id="breadcrumb-product-name" class="text-gray-50" aria-current="page">Carregando...</span></li>
+        </ol>
+    </nav>
+
+    <section class="flex flex-col lg:flex-row gap-8 lg:gap-12 fade-in">
+        <div id="gallery-column" class="flex-1 flex gap-4 min-w-0">
+            <!-- COLUNA DE MINIATURAS -->
+            <div id="thumb-nav-container" class="relative flex-shrink-0 w-20 flex flex-col items-center gap-2 mt-8">
+
+            <button id="thumb-scroll-up" class="gallery-nav-btn z-10">
+                <i class="fas fa-chevron-up"></i>
+            </button>
+
+            <div id="product-thumbnails" class="w-full">
+            </div>
+
+            <button id="thumb-scroll-down" class="gallery-nav-btn z-10">
+                <i class="fas fa-chevron-down"></i>
+            </button>
+
+        </div>
+
+
+            <!-- IMAGEM PRINCIPAL -->
+            <div id="main-image-wrapper"
+                 class="flex-grow relative bg-[whitesmoke] rounded-xl p-4 border border-gray-700 flex items-center justify-center aspect-square min-w-0 max-w-full max-h-[800px]">
+                <img id="main-product-image"
+                     src="https://placehold.co/800x800/111827/374151?text=+"
+                     alt="Imagem do produto"
+                     class="w-full h-full object-contain rounded-lg transition-opacity duration-300">
+
+                <button id="main-img-prev"
+                        class="gallery-nav-btn main-image-nav left-4 top-1/2 -translate-y-1/2"><i
+                        class="fas fa-chevron-left"></i></button>
+                <button id="main-img-next"
+                        class="gallery-nav-btn main-image-nav right-4 top-1/2 -translate-y-1/2"><i
+                        class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+
+
+        <div id="details-column" class="flex-shrink-0 lg:w-[480px] flex flex-col overflow-hidden">
+            <div class="flex flex-col space-y-5">
+                <div>
+                    <a href="#" id="product-category"
+                          class="inline-block bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full mb-2"></a>
+                    <h1 id="product-title" class="text-3xl lg:text-4xl font-black text-white"></h1>
+                </div>
+                <div class="flex items-center text-sm text-gray-400 space-x-4">
+                    <span id="product-sku"></span>
+                    <span id="product-stock-status" class="flex items-center"></span>
+                </div>
+                <div id="product-price" class="text-4xl lg:text-5xl font-bold highlight-accent-text"></div>
+                <div id="price-disclaimer"
+                     class="text-sm text-yellow-400 bg-yellow-900/30 p-3 mt-3 rounded-lg border border-yellow-600/50">
+                    <i class="fas fa-exclamation-triangle mr-2"></i>
+                    <strong>Atenção:</strong> Este é um valor de referência. O preço final e a disponibilidade do
+                    estoque serão confirmados via WhatsApp.
+                </div>
+                <p id="product-short-description" class="text-gray-300 leading-relaxed"></p>
+            </div>
+
+            <div class="mt-auto pt-6 space-y-5 border-t border-gray-800">
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-4">
+                        <label class="font-semibold text-white">Quantidade:</label>
+                        <div class="flex items-center border border-gray-600 rounded-lg">
+                            <button onclick="updateQuantity(-1)"
+                                    class="px-3 py-2 text-lg text-gray-300 hover:bg-gray-700 rounded-l-md">-
+                            </button>
+                            <input id="quantity-input" type="text" value="1"
+                                   class="w-12 text-center bg-gray-800 border-x border-gray-600 text-white font-bold focus:outline-none"
+                                   readonly>
+                            <button onclick="updateQuantity(1)"
+                                    class="px-3 py-2 text-lg text-gray-300 hover:bg-gray-700 rounded-r-md">+
+                            </button>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <button onclick="ADDcarrinho()"
+                                class="secondary-button font-bold py-4 px-8 rounded-lg text-lg w-full"><i
+                                class="fas fa-cart-plus mr-2"></i> Adicionar
+                        </button>
+                        <button onclick="comprarViaWhatsApp()"
+                                class="highlight-accent font-bold py-4 px-8 rounded-lg text-lg w-full"><i
+                                class="fab fa-whatsapp fa-1x mr-2"></i> Solicitar Orçamento
+                        </button>
+                    </div>
+                </div>
+                <div class="grid grid-cols-3 gap-4 pt-4 text-center text-sm text-gray-300">
+                    <div class="flex items-center justify-center gap-2"><i
+                            class="fas fa-shield-alt text-lime-400"></i><span>Compra Segura</span></div>
+                    <div class="flex items-center justify-center gap-2"><i class="fas fa-award text-lime-400"></i><span>Garantia de 1 Ano</span>
+                    </div>
+                    <div class="flex items-center justify-center gap-2"><i
+                            class="fas fa-shipping-fast text-lime-400"></i><span>Envio Rápido</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mt-16">
+        <div class="bg-gray-800/50 p-8 rounded-2xl border border-gray-800">
+            <h2 class="text-2xl font-bold text-white mb-4">Descrição do Produto</h2>
+            <div id="product-full-description" class="prose prose-invert max-w-none text-gray-300 space-y-4"></div>
+        </div>
+    </section>
+    <!-- [NOVO] ESTRUTURA DA NOTIFICAÇÃO COM BACKGROUND -->
+    <div id="notification">
+        <div id="notification-image-bg" class="w-32 h-32 rounded-md flex-shrink-0 bg-contain bg-center bg-no-repeat"></div>
+        <div class="flex-1">
+            <p class="font-bold text-white" id="notification-title"></p>
+            <p class="text-sm text-gray-400" id="notification-message"></p>
+        </div>
+    </div>
+</main>
+<footer class="bg-gray-950 border-t border-gray-800">
+    <div class="container px-6 py-12 mx-auto">
+        <div class="flex flex-col items-center text-center">
+            <a href="index.html " class="text-3xl font-black tracking-tighter">
+                Tecno<span class="highlight-accent-text">Shop</span>
+            </a>
+
+
+            <div class="flex flex-wrap justify-center mt-6 -mx-4">
+                <a href="index.html" class="mx-4 text-sm text-gray-400 hover:text-lime-400 transition-colors">Início</a>
+                <a href="produtos.html" class="mx-4 text-sm text-gray-400 hover:text-lime-400 transition-colors">Produtos</a>
+
+                <a href="sobre.html" class="mx-4 text-sm text-gray-400 hover:text-lime-400 transition-colors">Sobre</a>
+                <a href="contato.html" class="mx-4 text-sm text-gray-400 hover:text-lime-400 transition-colors">Contato</a>
+                <a href="carrinho.html" class="mx-4 text-sm text-gray-400 hover:text-lime-400 transition-colors">Carrinho</a>
+
+            </div>
+        </div>
+
+        <hr class="my-8 border-gray-700">
+
+        <div class="flex flex-col items-center sm:flex-row sm:justify-between">
+            <div class="text-center sm:text-left">
+                <p class="text-sm text-gray-500">
+                    © <span id="current-year">2025</span> Todos os direitos reservados.
+                </p>
+                <p class="text-sm text-gray-400 mt-2 sm:mt-1">
+                    Desenvolvido por <a href="https://renanratinh0.github.io/renanratinh0/" class="text-lime-400 hover:underline">Renan Carvalho Cavalcante</a>.
+                </p>
+            </div>
+
+            <div class="flex items-center space-x-4 mt-4 sm:mt-0">
+                <a href="https://github.com/renanratinh0" target="_blank" class="text-gray-400 hover:text-white transition-colors text-2xl" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.instagram.com/renan.carvalho.c/" target="_blank" class="text-gray-400 hover:text-pink-500 transition-colors text-2xl" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:renanratinho00@gmail.com" class="text-gray-400 hover:text-lime-400 transition-colors text-2xl" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+
+
+    </div>
+    </div>
+</footer>
+
+<div id="lightbox" class="lightbox">
+    <button id="lightbox-close" class="gallery-nav-btn lightbox-close-btn"><i class="fas fa-times"></i></button>
+    <button id="lightbox-prev" class="gallery-nav-btn lightbox-nav-btn prev"><i class="fas fa-chevron-left"></i></button>
+    <img id="lightbox-image" src="" alt="Imagem do produto em tela cheia" class="lightbox-image">
+    <button id="lightbox-next" class="gallery-nav-btn lightbox-nav-btn next"><i class="fas fa-chevron-right"></i></button>
+</div>
+
+<script src="js/config.js"></script>
+
+<script src="js/ui.js"></script>
+<script src="js/main.js"></script>
+<script src="js/search.js"></script>
+
+<script src="js/produtoUnico.js"></script>
+
+
+</body>

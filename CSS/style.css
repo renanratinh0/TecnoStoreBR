@@ -1,0 +1,297 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #111827;
+    color: #F9FAFB;
+}
+
+.highlight-accent {
+    background-color: #A3E635;
+    color: #1F2937;
+    transition: background-color 0.3s ease;
+}
+
+.highlight-accent:hover {
+    background-color: #84CC16;
+}
+
+.highlight-accent:disabled {
+    background-color: #4b5563;
+    color: #9ca3af;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.highlight-accent-text {
+    color: #A3E635;
+}
+
+.secondary-button {
+    background-color: #374151;
+    color: #F9FAFB;
+    border: 1px solid #4B5563;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.secondary-button:hover {
+    background-color: #4B5563;
+    transform: scale(1.03);
+}
+
+/* Animação de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+.product-card-immersive {
+    position: relative;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+    background-color: whitesmoke;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border: 1px solid whitesmoke;
+}
+
+.product-card-immersive::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(17, 24, 39, 1) 0%, rgba(17, 24, 39, 0.7) 0%, transparent 100%);
+    z-index: 1;
+    transition: opacity 0.4s ease;
+}
+
+.product-card-immersive:hover::before {
+    background: linear-gradient(to top, rgba(17, 24, 39, 1) 29%, rgba(17, 24, 39, 0.8) 35%, transparent 100%);
+}
+
+.product-card-immersive .card-content {
+    position: relative;
+    z-index: 2;
+    padding: 1.25rem;
+    color: #fff;
+}
+
+.product-card-immersive .description {
+    max-height: 1.5em;
+    opacity: 1;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    transition: max-height 0.4s ease-out, -webkit-line-clamp 0.4s ease-out;
+}
+
+.product-card-immersive:hover .description {
+    max-height: 4.5em;
+    -webkit-line-clamp: 3;
+}
+
+.product-card-immersive .buy-button {
+    max-height: 10rem;
+    opacity: 1;
+    overflow: visible;
+    transition: transform 0.3s ease;
+}
+
+.product-card-immersive:hover .buy-button {
+    transform: scale(1.05);
+}
+
+.product-card-immersive:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+
+#product-thumbnails {
+    max-height: 758px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+#product-thumbnails::-webkit-scrollbar {
+    display: none;
+}
+
+.product-gallery-thumb {
+    width: 70px;
+    height: 70px;
+    flex-shrink: 0;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+    border-radius: 0.5rem;
+    background-color: #1f2937;
+}
+
+.product-gallery-thumb:hover {
+    transform: scale(1.05);
+}
+
+.product-gallery-thumb.active {
+    border-color: #A3E635;
+}
+
+.gallery-nav-btn {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(17, 24, 39, 0.6);
+    backdrop-filter: blur(4px);
+    border-radius: 50%;
+    color: #d1d5db;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 10;
+}
+
+.gallery-nav-btn:hover:not(:disabled) {
+    background-color: #A3E635;
+    color: #1F2937;
+}
+
+.gallery-nav-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.main-image-nav {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#main-image-wrapper:hover .main-image-nav {
+    opacity: 1;
+}
+
+#thumb-nav-container #thumb-scroll-up,
+#thumb-nav-container #thumb-scroll-down {
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+}
+
+#thumb-nav-container #thumb-scroll-up {
+    top: 0;
+}
+
+#thumb-nav-container #thumb-scroll-down {
+    bottom: 0;
+}
+
+#main-product-image {
+    cursor: zoom-in;
+}
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    padding: 1rem;
+}
+
+.lightbox.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lightbox-image {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.lightbox-close-btn {
+    top: 1rem;
+    right: 1rem;
+}
+
+.lightbox-nav-btn {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.lightbox-nav-btn.prev {
+    left: 1rem;
+}
+
+.lightbox-nav-btn.next {
+    right: 1rem;
+}
+
+#notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #1f2937;
+    color: #f9fafb;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    border-left: 4px solid #a3e635;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    z-index: 10000;
+    transform: translateX(calc(100% + 20px));
+    transition: transform 0.5s ease-in-out;
+    width: 350px;
+}
+
+#notification.show {
+    transform: translateX(0);
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+#product-short-description {
+    display: -webkit-box;
+    -webkit-line-clamp: 9;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

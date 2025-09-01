@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós - TecnoStoreBR</title>
+    <link rel="icon" type="image/svg+xml" href="imgs/logo.svg">
+
+    <!-- Tailwind css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* Estilos customizados e tema (IDÊNTICOS AO INDEX) */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827;
+            /* bg-gray-900 */
+            color: #F9FAFB;
+            /* text-gray-50 */
+        }
+
+
+
+
+
+        .highlight-accent-text {
+            color: #A3E635;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+<!-- ===== Header / Navbar (IDÊNTICO AO INDEX) ===== -->
+<header class="bg-gray-800/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-700">
+    <nav class="container mx-auto px-4 lg:px-6 py-3">
+        <div class="flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold tracking-tighter">
+                Tecno<span class="highlight-accent-text">Shop</span>
+            </a>
+
+            <div class="hidden lg:flex items-center space-x-6 text-sm font-semibold text-gray-300">
+                <a href="index.html" class="hover:text-lime-400 transition-colors">Início</a>
+                <a href="produtos.html" class="hover:text-lime-400 transition-colors">Produtos</a>
+                <a href="sobre.html" class="text-lime-400">Sobre</a>
+                <a href="contato.html" class="hover:text-lime-400 transition-colors">Contato</a>
+            </div>
+            <div class="hidden lg:flex flex-1 max-w-lg">
+                <div class="relative w-full">
+                    <input type="search" id="index-search-input" placeholder="Pesquise seu produto..."
+                           class="w-full bg-gray-700 border-gray-600 rounded-lg py-2.5 px-4 text-gray-200 focus:ring-2 focus:ring-lime-400 focus:outline-none">
+                    <button id="index-search-button" class="absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-md hover:bg-gray-600">
+                        <i class="fa fa-search text-gray-400"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="carrinho.html" class="group p-2 rounded-lg hover:bg-gray-700 relative">
+                    <i class="fa fa-shopping-cart text-xl text-gray-300 group-hover:text-lime-400 transition-colors duration-200"></i>
+                    <span id="cart-badge"
+                          class="absolute -top-1 -right-1 bg-lime-500 text-gray-900 text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full"
+                          style="display: none;">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+</header>
+<!-- ===== Conteúdo Principal da Página "Sobre Nós" ===== -->
+<main class="container mx-auto px-4 lg:px-6 py-8 md:py-16">
+
+    <!-- Seção de Título -->
+    <section class="text-center fade-in mb-12 md:mb-16">
+        <h1 class="text-4xl md:text-6xl font-black tracking-tight">
+            Apaixonados por <span class="highlight-accent-text">Performance</span>
+        </h1>
+        <p class="mt-4 text-lg max-w-3xl mx-auto text-gray-300">
+            Conheça a nossa história, nossa missão e os valores que nos movem a oferecer a melhor experiência em hardware do Brasil.
+        </p>
+    </section>
+
+    <!-- Seção Principal: Nossa Missão e Imagem -->
+    <section class="fade-in grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16 md:mb-24" style="animation-delay: 0.2s;">
+        <!-- Coluna de Texto -->
+        <div class="space-y-6 text-gray-300 text-base md:text-lg leading-relaxed">
+            <h2 class="text-3xl font-bold text-white">Nossa Missão</h2>
+            <p>
+                Bem-vindo à <strong class="font-bold text-white">TecnoShop</strong>, o lugar onde a paixão por tecnologia e a busca incessante por performance se encontram. Nascemos do desejo de oferecer não apenas componentes de hardware, mas a solução completa para que gamers, criadores e entusiastas de tecnologia possam montar a máquina dos seus sonhos.
+            </p>
+            <p>
+                Nossa missão é simples: <strong class="highlight-accent-text">democratizar o acesso ao hardware de alta performance no Brasil.</strong> Acreditamos que todos merecem ter um computador potente, seja para dominar os jogos mais recentes, para produzir conteúdo de alta qualidade ou para trabalhar com máxima eficiência.
+            </p>
+            <p>
+                Para isso, selecionamos a dedo os melhores produtos do mercado, garantindo a estabilidade e a potência que você precisa.
+            </p>
+        </div>
+        <!-- Coluna da Imagem -->
+        <div class="rounded-2xl overflow-hidden shadow-2xl">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                 alt="Equipe da TecnoShop trabalhando em um ambiente moderno"
+                 class="w-full h-auto object-cover">
+
+        </div>
+    </section>
+
+    <!-- Seção de Pilares/Valores (Reciclando o estilo da home) -->
+    <section class="fade-in" style="animation-delay: 0.4s;">
+        <h2 class="text-3xl font-bold text-white text-center mb-8">Por que escolher a TecnoShop?</h2>
+        <div class="bg-gray-800/50 p-6 rounded-2xl">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <!-- Pilar 1: Garantia -->
+                <div class="flex flex-col items-center p-4 bg-gray-900/40 rounded-xl">
+                    <i class="fas fa-award text-4xl highlight-accent-text mb-4"></i>
+                    <h3 class="font-bold text-xl mb-2">Garantia Estendida</h3>
+                    <p class="text-sm text-gray-400">Oferecemos tranquilidade com 12 meses de garantia em todos os nossos produtos.</p>
+                </div>
+                <!-- Pilar 2: Entrega -->
+                <div class="flex flex-col items-center p-4 bg-gray-900/40 rounded-xl">
+                    <i class="fas fa-shipping-fast text-4xl highlight-accent-text mb-4"></i>
+                    <h3 class="font-bold text-xl mb-2">Entrega Rápida</h3>
+                    <p class="text-sm text-gray-400">Logística eficiente para que seu setup chegue o mais rápido possível em todo o Brasil.</p>
+                </div>
+                <!-- Pilar 3: Suporte -->
+                <div class="flex flex-col items-center p-4 bg-gray-900/40 rounded-xl">
+                    <i class="fas fa-headset text-4xl highlight-accent-text mb-4"></i>
+                    <h3 class="font-bold text-xl mb-2">Suporte Especializado</h3>
+                    <p class="text-sm text-gray-400">Nossa equipe é formada por entusiastas que entendem do assunto e estão prontos para ajudar.</p>
+                </div>
+                <!-- Pilar 4: Segurança -->
+                <div class="flex flex-col items-center p-4 bg-gray-900/40 rounded-xl">
+                    <i class="fas fa-shield-alt text-4xl highlight-accent-text mb-4"></i>
+                    <h3 class="font-bold text-xl mb-2">Compra 100% Segura</h3>
+                    <p class="text-sm text-gray-400">Seus dados protegidos com as mais avançadas tecnologias de segurança.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- ===== Footer (IDÊNTICO AO INDEX) ===== -->
+<footer class="bg-gray-950 border-t border-gray-800">
+    <div class="container px-6 py-12 mx-auto">
+        <div class="flex flex-col items-center text-center">
+            <a href="index.html " class="text-3xl font-black tracking-tighter">
+                Tecno<span class="highlight-accent-text">Shop</span>
+            </a>
+
+
+            <div class="flex flex-wrap justify-center mt-6 -mx-4">
+                <a href="index.html" class="mx-4 text-sm text-gray-400 hover:text-lime-400 transition-colors">Início</a>
+                <a href="produtos.html" class="mx-4 text-sm text-gray-400 hover:text-lime-400 transition-colors">Produtos</a>
+
+                <a href="sobre.html" class="mx-4 text-sm text-gray-400 hover:text-lime-400 transition-colors">Sobre</a>
+                <a href="contato.html" class="mx-4 text-sm text-gray-400 hover:text-lime-400 transition-colors">Contato</a>
+                <a href="carrinho.html" class="mx-4 text-sm text-gray-400 hover:text-lime-400 transition-colors">Carrinho</a>
+
+            </div>
+        </div>
+
+        <hr class="my-8 border-gray-700">
+
+        <div class="flex flex-col items-center sm:flex-row sm:justify-between">
+            <div class="text-center sm:text-left">
+                <p class="text-sm text-gray-500">
+                    © <span id="current-year">2025</span> Todos os direitos reservados.
+                </p>
+                <p class="text-sm text-gray-400 mt-2 sm:mt-1">
+                    Desenvolvido por <a href="https://renanratinh0.github.io/renanratinh0/" class="text-lime-400 hover:underline">Renan Carvalho Cavalcante</a>.
+                </p>
+            </div>
+
+            <div class="flex items-center space-x-4 mt-4 sm:mt-0">
+                <a href="https://github.com/renanratinh0" target="_blank" class="text-gray-400 hover:text-white transition-colors text-2xl" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.instagram.com/renan.carvalho.c/" target="_blank" class="text-gray-400 hover:text-pink-500 transition-colors text-2xl" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:renanratinho00@gmail.com" class="text-gray-400 hover:text-lime-400 transition-colors text-2xl" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+
+
+    </div>
+    </div>
+</footer>
+<script src="js/config.js"></script>
+
+<script src="js/ui.js"></script>
+<script src="js/main.js"></script>
+<script src="js/search.js"></script>
+
+</body>
+</html>

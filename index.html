@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TecnoStoreBR - A sua loja de Hardware</title>
+    <link rel="icon" type="image/svg+xml" href="imgs/logo.svg">
+
+    <!-- Tailwind css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="antialiased">
+
+    <!-- ===== Header / Navbar ===== -->
+    <header class="bg-gray-800/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-700">
+        <nav class="container mx-auto px-4 lg:px-6 py-3">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-bold tracking-tighter">
+                    Tecno<span class="highlight-accent-text">Shop</span>
+                </a>
+
+                <div class="hidden lg:flex items-center space-x-6 text-sm font-semibold text-gray-300">
+                    <a href="index.html" class="text-lime-400">Início</a>
+                    <a href="produtos.html" class="hover:text-lime-400 transition-colors">Produtos</a>
+                        <a href="sobre.html" class="hover:text-lime-400 transition-colors">Sobre</a>
+                    <a href="contato.html" class="hover:text-lime-400 transition-colors">Contato</a>
+                </div>
+                <div class="hidden lg:flex flex-1 max-w-lg">
+                    <div class="relative w-full">
+                        <input type="search" id="index-search-input" placeholder="Pesquise seu produto..."
+                               class="w-full bg-gray-700 border-gray-600 rounded-lg py-2.5 px-4 text-gray-200 focus:ring-2 focus:ring-lime-400 focus:outline-none">
+                        <button id="index-search-button" class="absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-md hover:bg-gray-600">
+                            <i class="fa fa-search text-gray-400"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <a href="carrinho.html" class="group p-2 rounded-lg hover:bg-gray-700 relative">
+                        <i class="fa fa-shopping-cart text-xl text-gray-300 group-hover:text-lime-400 transition-colors duration-200"></i>
+                        <span id="cart-badge"
+                              class="absolute -top-1 -right-1 bg-lime-500 text-gray-900 text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full"
+                              style="display: none;">0</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4 lg:px-6 py-8 md:py-12">
+
+        <!-- ===== Seção de Banner Principal (Hero) ===== -->
+        <section class="fade-in mb-16">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center bg-gray-800 p-8 rounded-2xl shadow-lg">
+
+                <!-- Coluna de Texto e CTA -->
+                <div class="text-center lg:text-left">
+                    <span class="text-lime-400 font-bold uppercase tracking-wider">PC Gamer Edição Limitada</span>
+                    <h1 class="text-4xl md:text-6xl font-black my-4 leading-tight">
+                        PERFORMANCE MÁXIMA PARA SEUS JOGOS
+                    </h1>
+                    <p class="text-gray-300 text-lg mb-8">
+                        Equipado com os processadores mais recentes e placas de vídeo de ponta. Domine o campo de
+                        batalha com a máquina definitiva.
+                    </p>
+                    <a href="#"
+                        class="highlight-accent font-bold py-4 px-8 rounded-lg text-lg inline-block transform hover:scale-105 transition-transform">
+                        Ver Oferta Agora <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Coluna da Imagem com zoom suave -->
+                <div class="overflow-visible  rounded-xl group">
+                    <img src="/imgs/Banner.png" alt="PC Gamer em destaque"
+                         class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-125  group-hover:z-10">
+                </div>
+
+            </div>
+            <!-- ===== Seção de Vantagens (Features) ===== -->
+            <section class="fade-in mb-16" style="animation-delay: 0.2s;">
+                <div class="bg-gray-800/50 p-6 rounded-2xl">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                        <div class="flex flex-col items-center p-4">
+                            <i class="fas fa-award text-3xl highlight-accent-text mb-3"></i>
+                            <h6 class="font-bold text-lg mb-1">Garantia Estendida</h6>
+                            <p class="text-sm text-gray-400">12 meses para todos os produtos.</p>
+                        </div>
+                        <div class="flex flex-col items-center p-4">
+                            <i class="fas fa-shipping-fast text-3xl highlight-accent-text mb-3"></i>
+                            <h6 class="font-bold text-lg mb-1">Entrega Rápida</h6>
+                            <p class="text-sm text-gray-400">Para todo o Brasil.</p>
+                        </div>
+                        <div class="flex flex-col items-center p-4">
+                            <i class="fas fa-headset text-3xl highlight-accent-text mb-3"></i>
+                            <h6 class="font-bold text-lg mb-1">Suporte Especializado</h6>
+                            <p class="text-sm text-gray-400">Equipe pronta para te ajudar.</p>
+                        </div>
+                        <div class="flex flex-col items-center p-4">
+                            <i class="fas fa-shield-alt text-3xl highlight-accent-text mb-3"></i>
+                            <h6 class="font-bold text-lg mb-1">Compra 100% Segura</h6>
+                            <p class="text-sm text-gray-400">Seus dados protegidos.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+
+        <section id="categorias" class="w-full">
+            <!--
+              Este container foi simplificado. Removi max-w-7xl, mx-auto e px-* para que ele herde o alinhamento e padding do <main> pai.
+            -->
+            <div>
+                <header class="mb-6 flex items-end justify-between md:mb-8">
+                    <h2 class="text-3xl font-black tracking-tight md:text-4xl">Categorias em destaque</h2>
+                    <a href="#" class="text-sm text-slate-400 hover:text-white transition-colors">Ver todas</a>
+                </header>
+
+                <!-- GRID ATUALIZADO: Agora com 5 colunas -->
+                <div class="grid grid-cols-1 gap-6 md:grid-cols-5 md:grid-rows-2">
+
+                    <!-- Card 1: Placas de Vídeo (Ocupa 2 colunas e 2 linhas) -->
+                    <a href="#" class="group relative block h-full min-h-[30rem] w-full overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60 md:col-span-2 md:row-span-2" aria-label="Placas de vídeo">
+                        <img src="/imgs/BOX_5080-box-card-1.png" alt="Placa de vídeo de última geração" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105" loading="lazy" />
+                        <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                        <div class="relative flex h-full flex-col items-start justify-end p-6">
+                            <h3 class="text-2xl font-black md:text-3xl">Placas de Vídeo</h3>
+                        </div>
+                    </a>
+
+                    <!-- Card 2: Memórias (Ocupa 2 colunas e 1 linha) -->
+                    <a href="#" class="group relative block h-64 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60 md:col-span-2" aria-label="Memórias">
+                        <img src="/imgs/memoria-ddr5-kingston-fury-beast-rgb-8gb-5600mhz-black-kf556c40bba-8_163440-removebg-preview1.png" alt="Pente de memória RAM DDR5 com RGB" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105" loading="lazy" />
+                        <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
+                        <div class="relative flex h-full flex-col items-start justify-end p-6">
+                            <h3 class="text-xl font-black md:text-2xl">Memoriak</h3>
+                        </div>
+                    </a>
+
+                    <!-- Card 3: Placas-mãe (Ocupa 1 coluna e 1 linha) -->
+                    <a href="#" class="group relative block h-64 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60" aria-label="Placas-mãe">
+                        <img src="/imgs/Plcaca%20mae.png" alt="Placa-mãe para processadores modernos" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105" loading="lazy" />
+                        <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
+                        <div class="relative flex h-full flex-col items-start justify-end p-6">
+                            <h3 class="text-xl font-black md:text-2xl">Placas-mãe</h3>
+                        </div>
+                    </a>
+
+                    <!-- Card 4: Processadores (Ocupa 1 coluna e 1 linha) -->
+                    <a href="#" class="group relative block h-64 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60" aria-label="Processadores">
+                        <img src="/imgs/ryzen-9-9950x-removebg-preview.png" alt="Processador de alta performance" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105" loading="lazy" />
+                        <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
+                        <div class="relative flex h-full flex-col items-start justify-end p-6">
+                            <h3 class="text-xl font-black md:text-2xl">Memoria</h3>
+                        </div>
+                    </a>
+
+                    <!-- Card 5: Placeholder (Ocupa 1 coluna e 1 linha) -->
+                    <a href="#" class="group relative block h-64 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60" aria-label="Placeholder">
+                        <img src="/imgs/Armazenamento.png" alt="Placeholder para futura categoria" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105" loading="lazy" />
+                        <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
+                        <div class="relative flex h-full flex-col items-start justify-end p-6">
+                            <h3 class="text-xl font-black md:text-2xl">Armazenamento</h3>
+                        </div>
+                    </a>
+
+                    <!-- Card 6: Placeholder (Ocupa 1 coluna e 1 linha) -->
+                    <a href="#" class="group relative block h-64 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60" aria-label="Placeholder">
+                        <img src="/imgs/Fonte.png" alt="Placeholder para futura categoria" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105" loading="lazy" />
+                        <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
+                        <div class="relative flex h-full flex-col items-start justify-end p-6">
+                            <h3 class="text-xl font-black md:text-2xl">Fontes</h3>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+        <!-- ===== Produtos em Destaque ===== -->
+        <!-- ===== Produtos em Destaque ===== -->
+        <section class="w-full py-16 md:py-20">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <header class="mb-6 flex items-end justify-between md:mb-8">
+                    <h2 class="text-3xl font-black tracking-tight md:text-4xl">Produtos em Destaque</h2>
+                    <a href="produtos.html" class="text-sm text-slate-400 hover:text-lime-400">Ver todos</a>
+                </header>
+
+                <!-- ESTE é o container que seu JS espera -->
+                <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Os cards serão injetados aqui pelo loadFeaturedProducts() -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <footer class="bg-gray-950 border-t border-gray-800">
+        <div class="container px-6 py-12 mx-auto">
+            <div class="flex flex-col items-center text-center">
+                <a href="#" class="text-3xl font-black tracking-tighter">
+                    Tecno<span class="highlight-accent-text">Shop</span>
+                </a>
+
+                <div class="flex flex-wrap justify-center mt-6 -mx-4">
+                    <a href="index.html" class="mx-4 text-sm text-gray-400 hover:text-lime-400 transition-colors">Início</a>
+                    <a href="produtos.html" class="mx-4 text-sm text-gray-400 hover:text-lime-400 transition-colors">Produtos</a>
+                    <a href="sobre.html" class="mx-4 text-sm text-gray-400 hover:text-lime-400 transition-colors">Sobre</a>
+                    <a href="contato.html" class="mx-4 text-sm text-gray-400 hover:text-lime-400 transition-colors">Contato</a>
+                    <a href="carrinho.html" class="mx-4 text-sm text-gray-400 hover:text-lime-400 transition-colors">Carrinho</a>
+
+                </div>
+            </div>
+
+            <hr class="my-8 border-gray-700">
+
+            <div class="flex flex-col items-center sm:flex-row sm:justify-between">
+                <div class="text-center sm:text-left">
+                    <p class="text-sm text-gray-500">
+                        © <span id="current-year">2025</span> Todos os direitos reservados.
+                    </p>
+                    <p class="text-sm text-gray-400 mt-2 sm:mt-1">
+                        Desenvolvido por <a href="https://renanratinh0.github.io/renanratinh0/" class="text-lime-400 hover:underline">Renan Carvalho Cavalcante</a>.
+                    </p>
+                </div>
+
+                <div class="flex items-center space-x-4 mt-4 sm:mt-0">
+                    <a href="https://github.com/renanratinh0" target="_blank" class="text-gray-400 hover:text-white transition-colors text-2xl" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.instagram.com/renan.carvalho.c/" target="_blank" class="text-gray-400 hover:text-pink-500 transition-colors text-2xl" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="mailto:renanratinho00@gmail.com" class="text-gray-400 hover:text-lime-400 transition-colors text-2xl" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+
+            </div>
+        </div>
+    </footer>
+    <div id="notification" class="fixed bottom-5 right-5 w-80 bg-gray-800 border border-gray-700 rounded-lg shadow-lg flex items-center p-3 transition-transform transform translate-x-full">
+        <div id="notification-image-bg" class="w-16 h-16 rounded-md bg-cover bg-center flex-shrink-0 mr-3"></div>
+        <div class="flex-grow">
+            <h5 id="notification-title" class="font-bold text-white text-sm">Nome do Produto</h5>
+            <p id="notification-message" class="text-gray-300 text-xs">foi adicionado ao carrinho!</p>
+        </div>
+    </div>
+</body>
+
+
+
+<script src="js/ui.js"></script>
+<script src="js/main.js"></script>
+<script src="js/search.js"></script>
+<script src="js/home.js">
+
+</script>
+</html>
