@@ -62,7 +62,13 @@ function comprarViaWhatsApp() {
 
     // 5. Cria o link e abre em uma nova aba
     // A variável WHATSAPP_NUMBER vem do arquivo config.js
-    const linkWhatsApp = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(mensagem)}`;
+let numero = localStorage.getItem('whatsappContact');
+if (!numero || !/^\d{10,13}$/.test(numero)) {
+    numero = '5511999999999';
+}
+
+const linkWhatsApp = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+
     window.open(linkWhatsApp, '_blank');
 }
 

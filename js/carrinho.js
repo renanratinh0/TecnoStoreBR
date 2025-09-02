@@ -19,7 +19,7 @@ function renderCartPage() {
                 <i class="fas fa-shopping-cart fa-4x text-gray-600 mb-4"></i>
                 <h2 class="text-2xl font-bold text-white">O seu carrinho está vazio</h2>
                 <p class="text-gray-400 mt-2">Adicione produtos para os ver aqui.</p>
-                <a href="produtos.html" class="highlight-accent font-bold py-3 px-6 rounded-lg inline-block mt-6">Ver Produtos</a>
+                <a href="/produtos.html" class="highlight-accent font-bold py-3 px-6 rounded-lg inline-block mt-6">Ver Produtos</a>
             </div>
         `;
         updateSummary(0);
@@ -132,6 +132,12 @@ window.solicitarOrcamentoWhatsApp = () => {
     mensagem += "Aguardo o contato para combinar o frete. Obrigado!";
 
 
-    const linkWhatsApp = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(mensagem)}`;
+let numero = localStorage.getItem('whatsappContact');
+if (!numero || !/^\d{10,13}$/.test(numero)) {
+    numero = '5511999999999';
+}
+
+const linkWhatsApp = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+
     window.open(linkWhatsApp, '_blank');
 };
